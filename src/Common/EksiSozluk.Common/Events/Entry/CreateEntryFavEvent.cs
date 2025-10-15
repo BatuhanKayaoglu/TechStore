@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EksiSozluk.Common.Events.Entry
+{ 
+    // PROJECTIONS KISMI DA BUNLARI KULLANACAGI İÇİN COMMON Tarafında tanımlıyoruz.
+    public class CreateEntryFavEvent
+    {
+        public Guid EntryId { get; set; }    
+        public Guid CreatedBy { get; set; }    
+    }
+}

@@ -18,9 +18,9 @@ namespace TechStore.Api.WebApi.Infrastructure.Extensions
                         throw new ArgumentNullException(nameof(handleException), $"{nameof(handleException)} cannot be null ");
 
                     if (!useDefaultHandlingResponse && handleException != null)
-                        return handleException(context, exceptionObject.Error);
+                        return handleException(context, exceptionObject?.Error);
 
-                    return DefaultHandleException(context, exceptionObject.Error, includeExceptionDetails);
+                    return DefaultHandleException(context, exceptionObject?.Error, includeExceptionDetails);
                 });
 
             });
@@ -35,14 +35,17 @@ namespace TechStore.Api.WebApi.Infrastructure.Extensions
         {
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             string message = "Internal server error occured!";
-            if (exception is UnauthorizedAccessException)
-                statusCode = HttpStatusCode.Unauthorized;
-
+            
+            if (exception != null)
+            {
+                if (exception is UnauthorizedAccessException)
+                    statusCode = HttpStatusCode.Unauthorized;
+            }
 
             var res = new
             {
                 HttpStatusCode = (int)statusCode,
-                Detail = includeExceptionDetails ? exception.ToString() : message
+                Detail = includeExceptionDetails && exception != null ? exception.ToString() : message
             };
 
             await WriteResponse(context, statusCode, res);

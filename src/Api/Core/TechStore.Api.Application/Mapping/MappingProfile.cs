@@ -21,7 +21,10 @@ namespace TechStore.Api.Application.Mapping
             CreateMap<Entry, GetEntryDetailViewModel>().ReverseMap();
             CreateMap<EntryComment, CreateEntryCommentCommand>().ReverseMap();
             CreateMap<User, UserDetailViewModel>().ReverseMap();
-            CreateMap<Entry, GetEntriesViewModel>().ForMember(x => x.CommentCount, y => y.MapFrom(z => z.EntryComments.Count));
+            CreateMap<Entry, GetEntriesViewModel>()
+                .ForMember(x => x.CommentCount, y => y.MapFrom(z => z.EntryComments != null ? z.EntryComments.Count : 0))
+                .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
+                .ForMember(x => x.Subject, y => y.MapFrom(z => z.Subject));
             CreateMap<User, GetAllUserViewModel>().ReverseMap();
         }
     }

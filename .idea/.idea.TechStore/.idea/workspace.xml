@@ -11,10 +11,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af5bf8c-a9d0-4fcb-8ba3-12d39e3a5204" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6af5bf8c-a9d0-4fcb-8ba3-12d39e3a5204" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +188,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760611245913</updated>
-      <workItem from="1760611246944" duration="1405000" />
+      <workItem from="1760611246944" duration="1607000" />
     </task>
     <servers />
   </component>

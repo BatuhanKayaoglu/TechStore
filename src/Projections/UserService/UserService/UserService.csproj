@@ -15,6 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\EksiSozluk.Common\EksiSozluk.Common.csproj" />
+    <ProjectReference Include="..\..\..\Common\TechStore.Common\TechStore.Common.csproj" />
   </ItemGroup>
 </Project>

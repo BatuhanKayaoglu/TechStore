@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using EksiSozluk.Common.Events.User;
+using TechStore.Common.Events.User;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace UserService.Services
             await connection.ExecuteAsync("UPDATE [User] SET Password=@Password WHERE Id=@Id ",
                                new
                                {
-                                   Id= @event.Id,   
+                                   Id = @event.Id,
                                    Password = @event.NewPassword
                                });
         }

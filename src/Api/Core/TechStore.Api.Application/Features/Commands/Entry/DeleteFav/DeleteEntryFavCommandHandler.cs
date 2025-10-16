@@ -1,0 +1,30 @@
+﻿using TechStore.Common.Events.Entry;
+using TechStore.Common.Infrastructure;
+using TechStore.Common;
+using TechStore.Common.ViewModels.RequestModels;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TechStore.Api.Application.Features.Commands.Entry.DeleteFav
+{
+    public class DeleteEntryFavCommandHandler : IRequestHandler<DeleteEntryFavCommand, bool>
+    {
+        public async Task<bool> Handle(DeleteEntryFavCommand request, CancellationToken cancellationToken)
+        {
+            QueueFactory.SendMessageToExchange(exchangeName: SozlukConstants.FavExchangeName,
+                exchangeType: SozlukConstants.DefaultExchangeType,
+                queueName: SozlukConstants.DeleteEntryFavQueueName,
+                obj: new DeleteEntryFavEvent()
+                {
+                    EntryId = request.EntryId,
+                    CreatedBy = request.UserId
+                });
+
+            return await Task.FromResult(true);
+        }
+    }
+}

@@ -1,6 +1,6 @@
-using EksiSozluk.Common;
-using EksiSozluk.Common.Events.User;
-using EksiSozluk.Common.Infrastructure;
+using TechStore.Common;
+using TechStore.Common.Events.User;
+using TechStore.Common.Infrastructure;
 using UserService.Services;
 
 namespace UserService

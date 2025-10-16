@@ -35,17 +35,23 @@ namespace TechStore.Api.WebApi.Infrastructure.Extensions
         {
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             string message = "Internal server error occured!";
-            
+
             if (exception != null)
             {
                 if (exception is UnauthorizedAccessException)
                     statusCode = HttpStatusCode.Unauthorized;
+
+                // Her zaman exception detaylarını göster
+                message = exception.ToString();
             }
 
             var res = new
             {
                 HttpStatusCode = (int)statusCode,
-                Detail = includeExceptionDetails && exception != null ? exception.ToString() : message
+                Detail = message,
+                Exception = exception?.Message,
+                StackTrace = exception?.StackTrace,
+                InnerException = exception?.InnerException?.Message
             };
 
             await WriteResponse(context, statusCode, res);

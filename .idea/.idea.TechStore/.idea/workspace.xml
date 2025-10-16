@@ -13,7 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6af5bf8c-a9d0-4fcb-8ba3-12d39e3a5204" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Infrastructure/Extensions/ApplicationBuilderExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Infrastructure/Extensions/ApplicationBuilderExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +191,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760611245913</updated>
-      <workItem from="1760611246944" duration="1231000" />
+      <workItem from="1760611246944" duration="1405000" />
     </task>
     <servers />
   </component>
@@ -240,6 +240,32 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs</url>
+          <line>27</line>
+          <properties documentPath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" containingFunctionPresentation="Method 'GetEntries'">
+            <startOffsets>
+              <option value="923" />
+            </startOffsets>
+            <endOffsets>
+              <option value="924" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/src/Api/WebApi/TechStore.Api.WebApi/Controllers/EntryController.cs" containingFunctionPresentation="Method 'GetEntries'">
+            <startOffsets>
+              <option value="1107" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1108" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

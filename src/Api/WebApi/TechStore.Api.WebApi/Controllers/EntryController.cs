@@ -26,8 +26,17 @@ namespace TechStore.Api.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
         {
-            var entries = await mediator.Send(query);
-            return Ok(entries);
+            try
+            {
+                var entries = await mediator.Send(query);
+                return Ok(entries);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
         [HttpGet("{id}")]

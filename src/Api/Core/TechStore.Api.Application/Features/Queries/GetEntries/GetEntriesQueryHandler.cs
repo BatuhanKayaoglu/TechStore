@@ -25,11 +25,11 @@ namespace TechStore.Api.Application.Features.Queries.GetEntries
             if (request.TodaysEntries)
             {
                 query = query.Where(i => i.CreateDate >= DateTime.Now.Date) // sadece bugünden(00.00) itibaren olan kayıtlar
-                .Where(i => i.CreateDate >= DateTime.Now.AddDays(1).Date);
+                .Where(i => i.CreateDate < DateTime.Now.AddDays(1).Date);
             }
 
-            query.Include(i => i.EntryComments)
-                .OrderBy(i => Guid.NewGuid()) // rastgele sıralasın diye
+            query = query.Include(i => i.EntryComments)
+                .OrderBy(i => i.CreateDate) // tarihe göre sırala
                 .Take(request.Count);
 
             return await query.ProjectTo<GetEntriesViewModel>(mapper.ConfigurationProvider).ToListAsync(cancellationToken); // gidicek burdaki modele bakıcak ve içersinde hangi alanlar varsa db'de sorgu calıstırırken sadee  o alanı yazıcak ve performans kazancaz.

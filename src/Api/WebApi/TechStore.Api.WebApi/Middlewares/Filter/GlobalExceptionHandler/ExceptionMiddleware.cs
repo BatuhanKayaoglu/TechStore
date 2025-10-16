@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using SendGrid.Helpers.Errors.Model;
 
 namespace TechStore.Api.WebApi.Middlewares.Filter.GlobalExceptionHandler
 {
@@ -46,8 +45,8 @@ namespace TechStore.Api.WebApi.Middlewares.Filter.GlobalExceptionHandler
         private static int GetStatusCode(Exception exception) =>
             exception switch
             {
-                BadRequestException => StatusCodes.Status400BadRequest,
-                NotFoundException => StatusCodes.Status400BadRequest,
+                ArgumentNullException => StatusCodes.Status400BadRequest,
+                ArgumentException => StatusCodes.Status400BadRequest,
                 ValidationException => StatusCodes.Status422UnprocessableEntity,
                 _ => StatusCodes.Status500InternalServerError
             };
